@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Privacy Policy for the My Twitch Chat History Chrome extension." />
+    <title>Privacy Policy — My Twitch Chat History</title>
+    <link rel="icon" href="../assets/icon.png" />
+    <link rel="stylesheet" href="../assets/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="../"><img src="../assets/icon.png" alt="" /><span>My Twitch Chat History</span></a>
+        <div class="nav-links"><a href="./" aria-current="page">Privacy</a><a href="../support/">Support</a></div>
+      </nav>
+    </header>
+    <main class="document">
+      <span class="eyebrow">Legal</span>
+      <h1 class="page-title">Privacy Policy</h1>
+      <p class="updated">Effective date: September 2, 2026</p>
+
+      <p>My Twitch Chat History is a browser extension that shows the signed-in viewer their own Twitch message history and related account information in the current Twitch channel. This policy explains what data the extension uses and where it goes.</p>
+
+      <h2>Data the extension accesses</h2>
+      <p>The extension accesses only the data needed to provide its user-facing features:</p>
+      <ul>
+        <li>the signed-in viewer's Twitch account and public profile information;</li>
+        <li>the current Twitch channel;</li>
+        <li>the viewer's own message history and message count in that channel;</li>
+        <li>account creation, follow, previous subscription, and ban information when Twitch provides it; and</li>
+        <li>public global and channel emote metadata returned by 7TV.</li>
+      </ul>
+      <p>The extension does not ask for or store the user's Twitch password. It does not access private Twitch whispers.</p>
+
+      <h2>How the data is used</h2>
+      <p>Message history and profile information are used only to display the history card, message count, profile details, and related features requested by the user. The developer does not use this data for advertising, profiling, analytics, credit decisions, or any unrelated purpose.</p>
+
+      <h2>Data stored by the extension</h2>
+      <ul>
+        <li>User-selected preferences are stored in Chrome Sync storage.</li>
+        <li>The detected Twitch theme and a temporary cache of public 7TV emote metadata are stored in local extension storage.</li>
+        <li>When a loaded in-page card is moved into a browser popout, its currently displayed context, messages, pagination cursor, and reading position are temporarily written to Chrome session storage under a one-time random token.</li>
+      </ul>
+      <p>The popout handoff is removed as soon as the popout consumes it. If it is not consumed, it becomes unusable after two minutes and is removed during later cleanup or when the browser session ends. The extension does not persist chat history as a permanent archive.</p>
+
+      <h2>Network requests</h2>
+      <p>The extension communicates directly with:</p>
+      <ul>
+        <li><code>www.twitch.tv</code> to obtain the viewer's own history and related account information using the active signed-in Twitch session; and</li>
+        <li><code>7tv.io</code> to obtain public global and current-channel emote metadata.</li>
+      </ul>
+      <p>These services receive the information required to respond to a request and standard connection information such as the user's IP address under their own privacy policies. My Twitch Chat History does not operate an analytics, advertising, tracking, or data-collection server.</p>
+
+      <h2>Data sharing and sale</h2>
+      <p>The developer does not collect, sell, rent, or share personal data. Data is not transferred to data brokers, advertising networks, or unrelated third parties.</p>
+
+      <h2>Permissions</h2>
+      <ul>
+        <li><code>storage</code> is used for preferences, theme detection, the temporary emote cache, and the one-time popout handoff.</li>
+        <li>Access to <code>https://www.twitch.tv/*</code> is required to add the extension interface and retrieve the viewer's own Twitch information.</li>
+        <li>Access to <code>https://7tv.io/*</code> is required to display supported 7TV emotes.</li>
+      </ul>
+
+      <h2>Your choices</h2>
+      <p>Preferences can be returned to their defaults from the extension popup. Removing the extension deletes its local extension data. The developer has no server-side copy of message history or settings to retain or delete.</p>
+
+      <h2>Changes to this policy</h2>
+      <p>This policy may be updated when the extension's features or data practices change. The effective date at the top of this page will be updated at the same time.</p>
+
+      <h2>Contact</h2>
+      <p>Privacy questions can be submitted through the <a href="../support/">support page</a>.</p>
+    </main>
+    <footer class="site-footer"><div class="footer-inner">My Twitch Chat History is an independent extension and is not affiliated with or endorsed by Twitch Interactive, Inc.</div></footer>
+  </body>
+</html>
