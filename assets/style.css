@@ -90,6 +90,10 @@ h3 { margin: 0 0 8px; font-size: 17px; line-height: 1.3; }
 p { margin: 0 0 16px; }
 .lead { max-width: 680px; margin-top: 22px; color: var(--muted); font-size: 19px; line-height: 1.55; }
 
+.store-action { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+.store-action .button { margin-top: 0; }
+.store-action span { color: var(--muted); font-size: 13px; }
+
 .pill-row { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 26px; }
 .pill { padding: 6px 10px; border: 1px solid var(--border); border-radius: 999px; background: rgba(32, 32, 36, .78); color: var(--muted); font-size: 13px; }
 
