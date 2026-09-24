@@ -18,47 +18,54 @@
     <main class="document">
       <span class="eyebrow">Legal</span>
       <h1 class="page-title">Privacy Policy</h1>
-      <p class="updated">Effective date: September 2, 2026</p>
+      <p class="updated">Effective date: September 24, 2026</p>
 
-      <p>My Twitch Chat History is a browser extension that shows the signed-in viewer their own Twitch message history and related account information in the current Twitch channel. This policy explains what data the extension uses and where it goes.</p>
+      <p>My Twitch Chat History is a browser extension for reviewing the signed-in viewer's own Twitch message history and available public chat logs for other Twitch users when the viewer explicitly requests them. This policy explains what data the extension uses and where it goes.</p>
 
       <h2>Data the extension accesses</h2>
       <p>The extension accesses only the data needed to provide its user-facing features:</p>
       <ul>
         <li>the signed-in viewer's Twitch account and public profile information;</li>
         <li>the current Twitch channel;</li>
-        <li>the viewer's own message history and message count in that channel;</li>
-        <li>account creation, follow, previous subscription, and ban information when Twitch provides it; and</li>
+        <li>the viewer's own message history, message count, and relationship information returned by Twitch;</li>
+        <li>public Twitch profile and channel-relationship information for a user whose card the viewer opens;</li>
+        <li>available public chat logs and log statistics returned by Zonian Logs for a selected Twitch username and channel; and</li>
         <li>public global and channel emote metadata returned by 7TV.</li>
       </ul>
       <p>The extension does not ask for or store the user's Twitch password. It does not access private Twitch whispers.</p>
 
       <h2>How the data is used</h2>
-      <p>Message history and profile information are used only to display the history card, message count, profile details, and related features requested by the user. The developer does not use this data for advertising, profiling, analytics, credit decisions, or any unrelated purpose.</p>
+      <p>Message history and profile information are used only to display history cards, message counts, profile details, search results, and related features requested by the user. The developer does not use this data for advertising, profiling, analytics, credit decisions, or any unrelated purpose.</p>
+
+      <h2>Public chat logs</h2>
+      <p>When the viewer explicitly opens or searches another user's public logs, the extension sends that selected Twitch username and the current channel login to <code>logs.zonian.dev</code>. Zonian returns public channel-chat records and aggregate availability information. These records may be incomplete, may contain gaps, and may be unavailable when a user or channel has opted out.</p>
+      <p>The extension does not send Twitch credentials, private messages, the viewer's personal history, or arbitrary page content to Zonian.</p>
 
       <h2>Data stored by the extension</h2>
       <ul>
         <li>User-selected preferences are stored in Chrome Sync storage.</li>
         <li>The detected Twitch theme and a temporary cache of public 7TV emote metadata are stored in local extension storage.</li>
-        <li>When a loaded in-page card is moved into a browser popout, its currently displayed context, messages, pagination cursor, and reading position are temporarily written to Chrome session storage under a one-time random token.</li>
+        <li>When a loaded in-page card is moved into a browser popout, its currently displayed context, messages, pagination cursor, search state, and reading position are temporarily written to Chrome session storage under a one-time random token.</li>
       </ul>
       <p>The popout handoff is removed as soon as the popout consumes it. If it is not consumed, it becomes unusable after two minutes and is removed during later cleanup or when the browser session ends. The extension does not persist chat history as a permanent archive.</p>
 
       <h2>Network requests</h2>
       <p>The extension communicates directly with:</p>
       <ul>
-        <li><code>www.twitch.tv</code> to obtain the viewer's own history and related account information using the active signed-in Twitch session; and</li>
+        <li><code>www.twitch.tv</code> to obtain the viewer's own history and relevant public Twitch profile information using the active signed-in Twitch session;</li>
+        <li><code>logs.zonian.dev</code> to obtain available public chat logs and log statistics for the selected username and current channel; and</li>
         <li><code>7tv.io</code> to obtain public global and current-channel emote metadata.</li>
       </ul>
       <p>These services receive the information required to respond to a request and standard connection information such as the user's IP address under their own privacy policies. My Twitch Chat History does not operate an analytics, advertising, tracking, or data-collection server.</p>
 
       <h2>Data sharing and sale</h2>
-      <p>The developer does not collect, sell, rent, or share personal data. Data is not transferred to data brokers, advertising networks, or unrelated third parties.</p>
+      <p>The developer does not collect, sell, or rent personal data. The extension transfers only the identifiers needed to provide a requested feature to Twitch, Zonian Logs, and 7TV, which process requests under their own privacy policies. The developer does not receive a copy of those requests or responses. Data is not transferred to data brokers, advertising networks, or unrelated third parties.</p>
 
       <h2>Permissions</h2>
       <ul>
         <li><code>storage</code> is used for preferences, theme detection, the temporary emote cache, and the one-time popout handoff.</li>
-        <li>Access to <code>https://www.twitch.tv/*</code> is required to add the extension interface and retrieve the viewer's own Twitch information.</li>
+        <li>Access to <code>https://www.twitch.tv/*</code> is required to add the extension interface and retrieve Twitch history and profile information.</li>
+        <li>Access to <code>https://logs.zonian.dev/*</code> is required to retrieve available public chat logs that the viewer explicitly opens or searches.</li>
         <li>Access to <code>https://7tv.io/*</code> is required to display supported 7TV emotes.</li>
       </ul>
 
