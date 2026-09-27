@@ -28,6 +28,19 @@ body {
 
 a { color: var(--accent); }
 a:hover { color: #bf94ff; }
+button { font-family: inherit; border: 0; cursor: pointer; }
+button:disabled { opacity: .45; cursor: not-allowed; }
+.support-form { display: grid; gap: 10px; margin: 24px 0; padding: 22px; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); }
+.support-form label { font-size: 14px; font-weight: 650; }
+.support-form label span { color: var(--muted); font-weight: 400; }
+.support-form input:not([type=checkbox]), .support-form textarea { width: 100%; border: 1px solid var(--border); border-radius: 6px; padding: 10px; background: var(--background); color: var(--text); font: inherit; font-size: 14px; }
+.support-form textarea { resize: vertical; }
+.support-form input:focus, .support-form textarea:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+.support-form .consent { display: flex; align-items: flex-start; gap: 10px; }
+.consent input { flex: 0 0 auto; margin-top: 6px; }
+.support-form .button { justify-self: start; }
+#report-status { margin: 0; color: var(--muted); font-size: 13px; }
+.honeypot { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
 
 .site-header {
   border-bottom: 1px solid var(--border);

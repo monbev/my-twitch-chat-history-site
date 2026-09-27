@@ -29,12 +29,33 @@
       </ol>
 
       <h2>Reporting a problem</h2>
-      <p>Open a public support issue and include the Twitch page type, the card mode you used, what you expected, and what happened. A screenshot and the extension version are helpful. Never include passwords, authentication tokens, cookies, or private messages.</p>
-      <a class="button" href="https://github.com/monbev/my-twitch-chat-history-site/issues/new">Open a support issue</a>
+      <p>Describe what you expected and what happened. This form sends your report privately to the developer through Telegram. You do not need a Telegram account.</p>
+      <p class="notice">Do not include passwords, tokens, cookies, or private chat messages. The extension does not attach your chat history automatically.</p>
+      <form id="support-form" class="support-form">
+        <label for="report-message">What went wrong?</label>
+        <textarea id="report-message" name="message" required minlength="20" maxlength="2000" rows="6" placeholder="Steps to reproduce, expected result, actual result…"></textarea>
+        <label for="report-contact">Contact for a reply <span>(optional)</span></label>
+        <input id="report-contact" name="contact" maxlength="120" autocomplete="off" placeholder="Email or Telegram username" />
+        <label for="report-version">Extension version <span>(optional)</span></label>
+        <input id="report-version" name="version" maxlength="32" placeholder="For example, 1.1.1" />
+        <label for="report-info">Support information <span>(optional)</span></label>
+        <textarea id="report-info" name="info" maxlength="1500" rows="3" placeholder="Paste the information copied from extension settings"></textarea>
+        <div class="honeypot" aria-hidden="true"><label for="report-website">Leave this field empty</label><input id="report-website" name="website" tabindex="-1" autocomplete="off" /></div>
+        <label class="consent"><input name="consent" type="checkbox" required /><span>I agree to send the information above to the developer through the support service and Telegram. <a href="../privacy/">Privacy details</a>.</span></label>
+        <div id="verification"></div>
+        <button class="button" id="send-report" type="submit" disabled>Send report</button>
+        <p id="report-status" role="status" aria-live="polite">Loading private reporting. JavaScript and anti-spam verification are required; you can also use the public GitHub issue link below.</p>
+      </form>
+      <a href="https://github.com/monbev/my-twitch-chat-history-site/issues/new" target="_blank" rel="noopener noreferrer">Open a public GitHub issue ↗</a>
+
+      <h2>Help the project</h2>
+      <div class="store-action"><a class="button" href="https://chromewebstore.google.com/detail/gigogimnabnbbdffaocnnolakaggnahp/reviews" target="_blank" rel="noopener noreferrer">Rate the extension</a><button class="button" disabled title="Donation link is not configured yet">Support development</button></div>
+      <p>All extension features remain free. A donation link will be added later.</p>
 
       <h2>Privacy questions</h2>
-      <p>Privacy-related questions may also be submitted through the same support form. Please review the <a href="../privacy/">Privacy Policy</a> first.</p>
+      <p>Privacy-related questions can also be sent using this form. Please review the <a href="../privacy/">Privacy Policy</a> first.</p>
     </main>
     <footer class="site-footer"><div class="footer-inner">My Twitch Chat History is an independent extension and is not affiliated with or endorsed by Twitch Interactive, Inc.</div></footer>
+    <script type="module" src="../assets/support-form.js"></script>
   </body>
 </html>
