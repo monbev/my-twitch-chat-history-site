@@ -4,8 +4,8 @@ This directory contains the approved revision for the separate GitHub Pages repo
 `my-twitch-chat-history-site`. The support form and privacy update were published
 with owner approval at commit `e9a91054c1ce3f6112682c6244bf6d54f5080ffb`.
 Live form: https://monbev.github.io/my-twitch-chat-history-site/support/ .
-One synthetic submission returned Telegram-confirmed delivery. Awaiting owner
-confirmation that the intended private chat received it.
+On 2026-10-05, a new approved synthetic submission returned Telegram-confirmed
+delivery, and the owner confirmed receipt in the intended private chat.
 
 Preview via the repository's local Vite preview server:
 `http://127.0.0.1:5178/support-site/support/`.
