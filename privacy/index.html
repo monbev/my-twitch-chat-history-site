@@ -6,21 +6,23 @@
     <meta name="description" content="Privacy Policy for the My Twitch Chat History Chrome extension." />
     <title>Privacy Policy — My Twitch Chat History</title>
     <link rel="icon" href="../assets/icon.png" />
-    <link rel="stylesheet" href="../assets/style.css?v=20260927" />
+    <link rel="stylesheet" href="../assets/style.css?v=20261005l10n" />
   </head>
-  <body>
+  <body data-title="privacyTitle">
     <header class="site-header">
       <nav class="nav" aria-label="Primary navigation">
-        <a class="brand" href="../"><img src="../assets/icon.png" alt="" /><span>My Twitch Chat History</span></a>
-        <div class="nav-links"><a href="./" aria-current="page">Privacy</a><a href="../support/">Support</a></div>
+        <a class="brand" href="../" data-page=""><img src="../assets/icon.png" alt="" /><span data-product>My Twitch Chat History</span></a>
+        <div class="nav-links"><a href="./" data-page="privacy/" data-i18n="privacy" aria-current="page">Privacy</a><a href="../support/" data-page="support/" data-i18n="feedback">Feedback</a><a href="../donate/" data-page="donate/" data-i18n="donate">Support development</a></div>
+        <label class="language-control"><span data-i18n="language">Language</span><select id="site-language"></select></label>
       </nav>
     </header>
-    <main class="document">
+    <main class="document" lang="en">
       <span class="eyebrow">Legal</span>
-      <h1 class="page-title">Privacy Policy</h1>
-      <p class="updated">Effective date: September 27, 2026</p>
+      <h1 class="page-title" data-i18n="privacyTitle">Privacy Policy</h1>
+      <p id="legal-language-note" class="notice" data-i18n="legalEnglish" hidden></p>
+      <p class="updated">Effective date: October 5, 2026. Covers version 1.2.0 and the project website.</p>
 
-      <p>My Twitch Chat History is a browser extension that shows the signed-in viewer their own Twitch message history and related account information in the current Twitch channel. This policy explains what data the extension uses and where it goes.</p>
+      <p>My Twitch Chat History is a browser extension for reviewing the signed-in viewer's own Twitch message history and available public chat logs for other Twitch users when explicitly requested. This policy explains what data the extension uses and where it goes.</p>
 
       <h2>Data the extension accesses</h2>
       <p>The extension accesses only the data needed to provide its user-facing features:</p>
@@ -29,8 +31,8 @@
         <li>the current Twitch channel;</li>
         <li>the viewer's own message history and message count in that channel;</li>
         <li>available public chat logs for a selected user in the current channel, requested by the viewer;</li>
-        <li>in development preview builds, indexed role counts from Roles.tv, only when the viewer chooses to look them up;</li>
-        <li>account creation, follow, previous subscription, and ban information when Twitch provides it; and</li>
+        <li>indexed role counts, channel lists and available role dates from Roles.tv, only when the viewer chooses to look them up and grants optional access;</li>
+        <li>account creation, follow, cumulative subscription tenure, and ban information when Twitch provides it; and</li>
         <li>public global and channel emote metadata returned by 7TV.</li>
       </ul>
       <p>The extension does not ask for or store the user's Twitch password. It does not access private Twitch whispers.</p>
@@ -42,9 +44,10 @@
       <ul>
         <li>User-selected preferences are stored in Chrome Sync storage.</li>
         <li>The detected Twitch theme and a temporary cache of public 7TV emote metadata are stored in local extension storage.</li>
-        <li>When a loaded in-page card is moved into a browser popout, its currently displayed context, messages, pagination cursor, and reading position are temporarily written to Chrome session storage under a one-time random token.</li>
+        <li>Requested public role counts and channel lists are cached in extension memory for up to ten minutes, with a limit of 100 cached responses. Loaded role lists also remain in the open card until it is closed or reloaded.</li>
+        <li>When a loaded in-page card is moved into a browser popout or full tab, its currently displayed context, messages, pagination cursor, search and roles view state, and reading position are temporarily written to Chrome session storage under a one-time random token.</li>
       </ul>
-      <p>The popout handoff is removed as soon as the popout consumes it. If it is not consumed, it becomes unusable after two minutes and is removed during later cleanup or when the browser session ends. The extension does not persist chat history as a permanent archive.</p>
+      <p>The viewer handoff is removed as soon as the new viewer consumes it. If it is not consumed, it becomes unusable after two minutes and is removed during later cleanup or when the browser session ends. The extension does not persist chat history as a permanent archive.</p>
 
       <h2>Network requests</h2>
       <p>The extension communicates directly with:</p>
@@ -52,7 +55,7 @@
         <li><code>www.twitch.tv</code> to obtain the viewer's own history and related account information using the active signed-in Twitch session; and</li>
         <li><code>7tv.io</code> to obtain public global and current-channel emote metadata;</li>
         <li><code>logs.zonian.dev</code> to retrieve available public chat logs for the selected user and channel; these logs may be incomplete and opt-outs are respected;</li>
-        <li>in development preview builds, <code>roles.tv</code> to retrieve indexed role counts after an explicit lookup. The requested public Twitch login and standard connection information are sent to this independent service. Indexed counts may be incomplete or outdated.</li>
+        <li><code>roles.tv</code> to retrieve indexed role counts and channel lists after an explicit lookup and optional permission approval. The requested public Twitch login, selected role and pagination/filter parameters, and standard connection information are sent to this independent service. Indexed records may be incomplete or outdated. Loading channel avatars may contact Twitch's public image CDN.</li>
       </ul>
       <p>These services receive the information required to respond to a request and standard connection information such as the user's IP address under their own privacy policies. My Twitch Chat History does not operate an analytics, advertising, tracking, or chat-history collection server. Voluntary support reports use the separate service described below.</p>
 
@@ -63,15 +66,20 @@
       <p>The support page lets you deliberately send a problem description, an optional contact for a reply, an optional extension version, and optional support information. Nothing is sent until you submit the form and consent. The extension does not automatically attach messages, cookies, tokens, account names, screenshots, or chat history.</p>
       <p>The delivery service uses Cloudflare Workers to validate and forward your report to the developer through Telegram. Cloudflare Turnstile performs anti-spam verification. These providers receive the report or verification information needed for their respective functions, along with standard connection data, under their own privacy policies. Never include passwords, authentication tokens, cookies, or private messages.</p>
       <p>The handler has no report database and does not log report contents or IP addresses. A short-lived hash of the connecting IP is used for rate limiting. Reports remain in the developer's Telegram support chat while needed to handle the issue. You may request deletion by contacting the developer through support; provider-managed records are subject to each provider's policies.</p>
-      <p>A public GitHub issue is an alternative. Anything you post there is public. The donation button is inactive until a provider is connected; payment details are not collected by this site.</p>
+      <p>A public GitHub issue is an alternative. Anything you post there is public.</p>
+
+      <h2>Voluntary donations and website preferences</h2>
+      <p>The donation page links to a monobank Jar that supports the developer's work. Clicking the payment link opens monobank in a new tab. Payment information is handled by the bank under its own policies, not collected by this website or extension. Donations are optional and do not unlock features.</p>
+      <p>The donation page also displays public Binance receiving addresses and locally hosted QR codes for optional cryptocurrency support. Copying an address does not connect a wallet or initiate a payment. The website does not query balances, transactions or exchange APIs. Transfers are handled by the sender's wallet or exchange and Binance under their own policies; blockchain transactions may be public. No private keys or exchange credentials are collected.</p>
+      <p>The website stores only your manually selected language in this browser's local storage. You can change it using the language selector or remove the preference by clearing this site's storage. The website does not use analytics or payment-tracking widgets.</p>
 
       <h2>Permissions</h2>
       <ul>
-        <li><code>storage</code> is used for preferences, theme detection, the temporary emote cache, and the one-time popout handoff.</li>
+        <li><code>storage</code> is used for preferences, theme detection, the temporary emote cache, and the one-time viewer handoff.</li>
         <li>Access to <code>https://www.twitch.tv/*</code> is required to add the extension interface and retrieve the viewer's own Twitch information.</li>
         <li>Access to <code>https://7tv.io/*</code> is required to display supported 7TV emotes.</li>
         <li>Access to <code>https://logs.zonian.dev/*</code> retrieves public logs only when requested.</li>
-        <li>In development preview builds, access to <code>https://roles.tv/*</code> retrieves indexed public role counts only after an explicit lookup.</li>
+        <li>Optional access to <code>https://roles.tv/*</code> retrieves indexed public role counts and channel lists only after an explicit lookup. You may decline or revoke this permission without disabling message history.</li>
       </ul>
 
       <h2>Your choices</h2>
@@ -90,8 +98,9 @@
       <p>This policy may be updated when the extension's features or data practices change. The effective date at the top of this page will be updated at the same time.</p>
 
       <h2>Contact</h2>
-      <p>Privacy questions can be submitted through the <a href="../support/">support page</a>.</p>
+      <p>Privacy questions can be submitted through the <a href="../support/" data-page="support/">support page</a>.</p>
     </main>
-    <footer class="site-footer"><div class="footer-inner">My Twitch Chat History is an independent extension and is not affiliated with or endorsed by Twitch Interactive, Inc.</div></footer>
+    <footer class="site-footer"><div class="footer-inner" data-i18n="footer">My Twitch Chat History is independent and is not affiliated with or endorsed by Twitch Interactive, Inc.</div></footer>
+    <script type="module" src="../assets/site.js?v=20261005release"></script>
   </body>
 </html>

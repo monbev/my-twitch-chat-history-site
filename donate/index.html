@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Optional support for free chat history extension development." />
+    <title>Support development — My Twitch Chat History</title>
+    <link rel="icon" href="../assets/icon.png" /><link rel="stylesheet" href="../assets/style.css?v=20261005l10n" />
+  </head>
+  <body data-title="donate" data-description="donationText">
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="../" data-page=""><img src="../assets/icon.png" alt="" /><span data-product>My Twitch Chat History</span></a>
+        <div class="nav-links"><a href="../privacy/" data-page="privacy/" data-i18n="privacy">Privacy</a><a href="../support/" data-page="support/" data-i18n="feedback">Feedback</a><a href="./" data-page="donate/" data-i18n="donate" aria-current="page">Support development</a></div>
+        <label class="language-control"><span data-i18n="language">Language</span><select id="site-language"></select></label>
+      </nav>
+    </header>
+    <main class="document donate-page">
+      <h1 data-i18n="donate">Support development</h1>
+      <p class="lead" data-i18n="supportLead">If you find the extension useful, you can support its development.</p>
+      <div class="donation-primary">
+        <a class="button" href="https://send.monobank.ua/jar/3t818DXJWc" data-destination="donationUrl" target="_blank" rel="noopener noreferrer"><span data-i18n="mono">Support by card</span> ↗</a>
+        <p class="payment-note payment-provider" data-i18n="paymentProvider">Via monobank</p>
+        <p class="payment-note payment-availability" data-i18n="paymentNote">Some international cards may not be accepted.</p>
+      </div>
+      <details class="crypto-section">
+        <summary data-i18n="cryptoOption">Crypto</summary>
+        <label class="crypto-choice" hidden><span data-i18n="cryptoAssetNetwork">Asset and network</span><select id="crypto-choice"><option value="usdt-tron">USDT · Tron (TRC20)</option><option value="usdc-base">USDC · Base</option></select></label>
+        <div class="crypto-grid">
+          <article class="crypto-card" data-crypto="usdt-tron" aria-labelledby="usdt-heading">
+            <h3 id="usdt-heading">USDT <span class="network-badge">Tron (TRC20)</span></h3>
+            <p class="network-warning" data-i18n="cryptoUsdtOnly">USDT on Tron (TRC20) only.</p>
+            <details class="qr-details"><summary data-i18n="cryptoShowQr">Show QR</summary><img class="crypto-qr" data-crypto-qr src="../assets/usdt-tron-qr.svg" width="220" height="220" alt="USDT · Tron (TRC20)" /><p class="payment-note" data-i18n="cryptoQrNote">QR codes contain only the address. Select the matching asset and network yourself.</p></details>
+            <p class="address-label" data-i18n="cryptoAddress">Receiving address</p>
+            <code class="crypto-address" data-crypto-address>TWJikfQVaPZHHGLRdwwogQWfRZoz3LddCf</code>
+            <button type="button" class="button" data-crypto-copy data-i18n="cryptoCopy">Copy address</button>
+            <p class="copy-status" data-crypto-status role="status" aria-live="polite"></p>
+          </article>
+          <article class="crypto-card" data-crypto="usdc-base" aria-labelledby="usdc-heading">
+            <h3 id="usdc-heading">USDC <span class="network-badge">Base</span></h3>
+            <p class="network-warning" data-i18n="cryptoUsdcOnly">USDC on Base only.</p>
+            <details class="qr-details"><summary data-i18n="cryptoShowQr">Show QR</summary><img class="crypto-qr" data-crypto-qr src="../assets/usdc-base-qr.svg" width="220" height="220" alt="USDC · Base" /><p class="payment-note" data-i18n="cryptoQrNote">QR codes contain only the address. Select the matching asset and network yourself.</p></details>
+            <p class="address-label" data-i18n="cryptoAddress">Receiving address</p>
+            <code class="crypto-address" data-crypto-address>0x3737e613c4f751eda0e4704e6cf60a9bac326667</code>
+            <button type="button" class="button" data-crypto-copy data-i18n="cryptoCopy">Copy address</button>
+            <p class="copy-status" data-crypto-status role="status" aria-live="polite"></p>
+          </article>
+        </div>
+        <div class="crypto-safety">
+          <p data-i18n="cryptoFeesNote">Network and exchange fees may apply. For a small tip, check the fee before sending.</p>
+        </div>
+        <p id="crypto-preview-note" class="preview-note" data-i18n="cryptoPreview" hidden></p>
+        <noscript><p>JavaScript is needed for the copy buttons. You can copy a displayed address manually; check its asset and network before sending.</p></noscript>
+      </details>
+      <div class="other-help">
+        <p data-i18n="otherHelp">You can also help by sharing an idea or leaving a review.</p>
+        <a href="../support/" data-page="support/" data-i18n="feedback">Feedback</a>
+        <a href="https://chromewebstore.google.com/detail/gigogimnabnbbdffaocnnolakaggnahp/reviews" data-destination="reviewUrl" target="_blank" rel="noopener noreferrer"><span data-i18n="rate">Rate the extension</span> ↗</a>
+      </div>
+      <p id="payment-preview-note" class="preview-note" data-i18n="paymentPreview" hidden></p>
+    </main>
+    <footer class="site-footer"><div class="footer-inner" data-i18n="footer">My Twitch Chat History is independent and is not affiliated with or endorsed by Twitch Interactive, Inc.</div></footer>
+    <script type="module" src="../assets/crypto-donations.js?v=20261005release"></script>
+    <script type="module">if (['127.0.0.1', 'localhost', '[::1]'].includes(location.hostname)) document.querySelectorAll('#payment-preview-note, #crypto-preview-note').forEach(note => note.hidden = false);</script>
+  </body>
+</html>

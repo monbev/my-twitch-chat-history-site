@@ -1,61 +1,54 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Support and troubleshooting for the My Twitch Chat History Chrome extension." />
-    <title>Support — My Twitch Chat History</title>
-    <link rel="icon" href="../assets/icon.png" />
-    <link rel="stylesheet" href="../assets/style.css?v=20260927" />
+    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Report a problem or suggest an improvement for My Twitch Chat History." />
+    <title>Feedback — My Twitch Chat History</title>
+    <link rel="icon" href="../assets/icon.png" /><link rel="stylesheet" href="../assets/style.css?v=20261005l10n" />
   </head>
-  <body>
+  <body data-title="feedback" data-description="feedbackLead">
     <header class="site-header">
       <nav class="nav" aria-label="Primary navigation">
-        <a class="brand" href="../"><img src="../assets/icon.png" alt="" /><span>My Twitch Chat History</span></a>
-        <div class="nav-links"><a href="../privacy/">Privacy</a><a href="./" aria-current="page">Support</a></div>
+        <a class="brand" href="../" data-page=""><img src="../assets/icon.png" alt="" /><span data-product>My Twitch Chat History</span></a>
+        <div class="nav-links"><a href="../privacy/" data-page="privacy/" data-i18n="privacy">Privacy</a><a href="./" data-page="support/" data-i18n="feedback" aria-current="page">Feedback</a><a href="../donate/" data-page="donate/" data-i18n="donate">Support development</a></div>
+        <label class="language-control"><span data-i18n="language">Language</span><select id="site-language"></select></label>
       </nav>
     </header>
-    <main class="document">
-      <span class="eyebrow">Help</span>
-      <h1 class="page-title">Support</h1>
-      <p class="lead">Most Twitch loading issues can be resolved without reinstalling the extension.</p>
-
-      <h2>Quick troubleshooting</h2>
-      <ol>
-        <li>Confirm that you are signed in to Twitch.</li>
-        <li>Open <code>chrome://extensions</code> and reload My Twitch Chat History.</li>
-        <li>Return to Twitch and perform a hard refresh with <code>Ctrl+Shift+R</code>.</li>
-        <li>Open a channel chat and use Retry if Twitch was still loading.</li>
-      </ol>
-
-      <h2>Reporting a problem</h2>
-      <p>Describe what you expected and what happened. This form sends your report privately to the developer through Telegram. You do not need a Telegram account.</p>
-      <p class="notice">Do not include passwords, tokens, cookies, or private chat messages. The extension does not attach your chat history automatically.</p>
+    <main class="document feedback-page">
+      <h1 data-i18n="feedbackTitle">Report a problem or suggest an improvement</h1>
+      <p class="lead" data-i18n="feedbackLead">Found a bug or have an idea? Tell us about it.</p>
       <form id="support-form" class="support-form">
-        <label for="report-message">What went wrong?</label>
-        <textarea id="report-message" name="message" required minlength="20" maxlength="2000" rows="6" placeholder="Steps to reproduce, expected result, actual result…"></textarea>
-        <label for="report-contact">Contact for a reply <span>(optional)</span></label>
-        <input id="report-contact" name="contact" maxlength="120" autocomplete="off" placeholder="Email or Telegram username" />
-        <label for="report-version">Extension version <span>(optional)</span></label>
-        <input id="report-version" name="version" maxlength="32" placeholder="For example, 1.1.1" />
-        <label for="report-info">Support information <span>(optional)</span></label>
-        <textarea id="report-info" name="info" maxlength="1500" rows="3" placeholder="Paste the information copied from extension settings"></textarea>
+        <label for="report-message" data-i18n="message">Your message</label>
+        <textarea id="report-message" name="message" required minlength="20" maxlength="2000" rows="5" data-i18n-placeholder="messagePlaceholder" placeholder="Describe the problem or share your suggestion…"></textarea>
+        <p class="field-note" data-i18n="safeNote">Please don’t include passwords, tokens, cookies, or private messages.</p>
+        <label for="report-contact" data-i18n="contact">Contact for a reply (optional)</label>
+        <input id="report-contact" name="contact" maxlength="120" autocomplete="off" data-i18n-placeholder="contactPlaceholder" placeholder="Email or Telegram username" />
+        <details class="disclosure">
+          <summary data-i18n="details">Additional details (optional)</summary>
+          <div class="additional-fields">
+            <label for="report-version" data-i18n="version">Extension version</label>
+            <input id="report-version" name="version" maxlength="32" placeholder="1.2.0" pattern="[a-zA-Z0-9. \-]+" />
+            <label for="report-info" data-i18n="info">Technical details</label>
+            <textarea id="report-info" name="info" maxlength="1500" rows="3" data-i18n-placeholder="infoPlaceholder" placeholder="Browser, steps to reproduce, or information copied from extension settings"></textarea>
+          </div>
+        </details>
         <div class="honeypot" aria-hidden="true"><label for="report-website">Leave this field empty</label><input id="report-website" name="website" tabindex="-1" autocomplete="off" /></div>
-        <label class="consent"><input name="consent" type="checkbox" required /><span>I agree to send the information above to the developer through the support service and Telegram. <a href="../privacy/">Privacy details</a>.</span></label>
+        <label class="consent"><input name="consent" type="checkbox" required /><span><span data-i18n="consent">I agree to the processing of this feedback as described in the</span> <a href="../privacy/" data-page="privacy/" data-i18n="privacyTitle">Privacy Policy</a>.</span></label>
         <div id="verification"></div>
-        <button class="button" id="send-report" type="submit" disabled>Send report</button>
-        <p id="report-status" role="status" aria-live="polite">Loading private reporting. JavaScript and anti-spam verification are required; you can also use the public GitHub issue link below.</p>
+        <button class="button" id="send-report" type="submit" disabled data-i18n="send">Send feedback</button>
+        <p id="report-status" role="status" aria-live="polite" data-i18n="verificationWaiting">Complete verification to send.</p>
       </form>
-      <a href="https://github.com/monbev/my-twitch-chat-history-site/issues/new" target="_blank" rel="noopener noreferrer">Open a public GitHub issue ↗</a>
-
-      <h2>Help the project</h2>
-      <div class="store-action"><a class="button" href="https://chromewebstore.google.com/detail/gigogimnabnbbdffaocnnolakaggnahp/reviews" target="_blank" rel="noopener noreferrer">Rate the extension</a><button class="button" disabled title="Donation link is not configured yet">Support development</button></div>
-      <p>All extension features remain free. A donation link will be added later.</p>
-
-      <h2>Privacy questions</h2>
-      <p>Privacy-related questions can also be sent using this form. Please review the <a href="../privacy/">Privacy Policy</a> first.</p>
+      <details class="disclosure">
+        <summary data-i18n="troubleshoot">Troubleshooting</summary>
+        <ol><li data-i18n="step1">Make sure you’re signed in to Twitch.</li><li data-i18n="step2">Reload the extension in chrome://extensions.</li><li data-i18n="step3">Refresh Twitch with Ctrl+Shift+R, then try again.</li></ol>
+      </details>
+      <div class="feedback-footer">
+        <a href="https://github.com/monbev/my-twitch-chat-history-site/issues/new" data-destination="issueUrl" target="_blank" rel="noopener noreferrer"><span data-i18n="github">Prefer GitHub? Open a public issue</span> ↗</a>
+        <a href="https://chromewebstore.google.com/detail/gigogimnabnbbdffaocnnolakaggnahp/reviews" data-destination="reviewUrl" target="_blank" rel="noopener noreferrer"><span data-i18n="rate">Rate the extension</span> ↗</a>
+      </div>
+      <noscript><p>JavaScript and anti-spam verification are required to send feedback. You can use the public GitHub issue link instead.</p></noscript>
     </main>
-    <footer class="site-footer"><div class="footer-inner">My Twitch Chat History is an independent extension and is not affiliated with or endorsed by Twitch Interactive, Inc.</div></footer>
-    <script type="module" src="../assets/support-form.js"></script>
+    <footer class="site-footer"><div class="footer-inner" data-i18n="footer">My Twitch Chat History is independent and is not affiliated with or endorsed by Twitch Interactive, Inc.</div></footer>
+    <script type="module" src="../assets/support-form.js?v=20261005release"></script>
   </body>
 </html>

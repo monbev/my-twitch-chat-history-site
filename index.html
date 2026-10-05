@@ -6,46 +6,48 @@
     <meta name="description" content="My Twitch Chat History lets you view your personal chat history and message count directly inside Twitch." />
     <title>My Twitch Chat History</title>
     <link rel="icon" href="assets/icon.png" />
-    <link rel="stylesheet" href="assets/style.css?v=20260927" />
+    <link rel="stylesheet" href="assets/style.css?v=20261005l10n" />
   </head>
-  <body>
+  <body data-description="homeLead">
     <header class="site-header">
       <nav class="nav" aria-label="Primary navigation">
-        <a class="brand" href="./"><img src="assets/icon.png" alt="" /><span>My Twitch Chat History</span></a>
-        <div class="nav-links"><a href="privacy/">Privacy</a><a href="support/">Support</a></div>
+        <a class="brand" href="./" data-page=""><img src="assets/icon.png" alt="" /><span data-product>My Twitch Chat History</span></a>
+        <div class="nav-links"><a href="privacy/" data-page="privacy/" data-i18n="privacy">Privacy</a><a href="support/" data-page="support/" data-i18n="feedback">Feedback</a><a href="donate/" data-page="donate/" data-i18n="donate">Support development</a></div>
+        <label class="language-control"><span data-i18n="language">Language</span><select id="site-language"></select></label>
       </nav>
     </header>
     <main>
       <section class="hero">
-        <span class="eyebrow">Chromium browser extension</span>
-        <h1>Your Twitch chat history, where you need it.</h1>
-        <p class="lead">View the messages you have sent in the current channel, see an accurate message count, and browse older history without leaving Twitch.</p>
+        <h1 data-i18n="homeTitle">Your Twitch chat history, where you need it.</h1>
+        <p class="lead" data-i18n="homeLead">Browse your own messages and available public logs without leaving Twitch.</p>
         <div class="store-action">
-          <a class="button" href="https://chromewebstore.google.com/detail/gigogimnabnbbdffaocnnolakaggnahp">Get it from Chrome Web Store</a>
-          <span>For Google Chrome and compatible Chromium-based desktop browsers.</span>
+          <a class="button" href="https://chromewebstore.google.com/detail/gigogimnabnbbdffaocnnolakaggnahp" data-destination="storeUrl" data-i18n="install">Get it from Chrome Web Store</a>
+          <span data-i18n="browserNote">For Chrome and compatible Chromium-based desktop browsers.</span>
         </div>
-        <div class="pill-row" aria-label="Key properties"><span class="pill">No separate account</span><span class="pill">No analytics</span><span class="pill">Chat history stays in your browser</span></div>
+        <div class="pill-row"><span class="pill" data-i18n="noAccount">No separate account</span><span class="pill" data-i18n="noAnalytics">No analytics</span><span class="pill" data-i18n="free">All features stay free.</span></div>
       </section>
 
       <section aria-labelledby="features-title">
-        <h2 id="features-title">Focused on personal history</h2>
+        <h2 id="features-title" data-i18n="featuresTitle">History that fits your workflow</h2>
         <div class="grid">
-          <article class="card"><h3>Browse naturally</h3><p>Open an interactive card, browser popout, or full tab and load older messages as you scroll.</p></article>
-          <article class="card"><h3>Keep your place</h3><p>Move a loaded card into a popout while preserving its messages and reading position.</p></article>
-          <article class="card"><h3>Match Twitch</h3><p>Use Twitch-aware light and dark themes, date and time preferences, links, and supported emotes.</p></article>
+          <article class="card"><h3 data-i18n="browseTitle">Browse naturally</h3><p data-i18n="browseText">Open a card, popout, or full tab. Load older messages as you scroll.</p></article>
+          <article class="card"><h3 data-i18n="countTitle">See your message count</h3><p data-i18n="countText">Keep a live message count beside the chat controls.</p></article>
+          <article class="card"><h3 data-i18n="matchTitle">Make it yours</h3><p data-i18n="matchText">Choose your language, theme, date format, and how history opens.</p></article>
         </div>
       </section>
 
       <aside class="notice">
-        <strong>Privacy by design</strong>
-        <p>History is processed in your browser for the feature you request. The extension does not run analytics, sell data, or send messages to a developer-operated server. Read the <a href="privacy/">privacy policy</a>.</p>
+        <strong data-i18n="privateTitle">Privacy by design</strong>
+        <p data-i18n="privateText">Chat history is processed in your browser, not collected on a developer server.</p>
+        <a href="privacy/" data-page="privacy/" data-i18n="privacyTitle">Privacy Policy</a>
       </aside>
       <section aria-labelledby="community-title">
-        <h2 id="community-title">Help shape the next update</h2>
-        <div class="store-action"><a class="button" href="support/">Report a problem</a><a class="button" href="https://chromewebstore.google.com/detail/gigogimnabnbbdffaocnnolakaggnahp/reviews" target="_blank" rel="noopener noreferrer">Rate the extension</a><button class="button" disabled title="Donation link is not configured yet">Support development</button></div>
-        <p>All features are free. Donations will be available once a payment link is connected.</p>
+        <h2 id="community-title" data-i18n="communityTitle">Help shape the next update</h2>
+        <div class="store-action"><a class="button" href="support/" data-page="support/" data-i18n="report">Problem or suggestion</a><a class="button button-secondary" href="https://chromewebstore.google.com/detail/gigogimnabnbbdffaocnnolakaggnahp/reviews" data-destination="reviewUrl" target="_blank" rel="noopener noreferrer" data-i18n="rate">Rate the extension</a><a class="button button-secondary" href="donate/" data-page="donate/" data-i18n="donate">Support development</a></div>
+        <p class="community-note" data-i18n="free">All features stay free.</p>
       </section>
     </main>
-    <footer class="site-footer"><div class="footer-inner">My Twitch Chat History is an independent extension and is not affiliated with or endorsed by Twitch Interactive, Inc.</div></footer>
+    <footer class="site-footer"><div class="footer-inner" data-i18n="footer">My Twitch Chat History is independent and is not affiliated with or endorsed by Twitch Interactive, Inc.</div></footer>
+    <script type="module" src="assets/site.js?v=20261005release"></script>
   </body>
 </html>

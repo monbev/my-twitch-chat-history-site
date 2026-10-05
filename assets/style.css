@@ -74,6 +74,61 @@ button:disabled { opacity: .45; cursor: not-allowed; }
 .nav-links { display: flex; gap: 18px; }
 .nav-links a { color: var(--muted); font-size: 14px; font-weight: 650; text-decoration: none; }
 .nav-links a:hover, .nav-links a[aria-current="page"] { color: var(--text); }
+.nav { flex-wrap: wrap; }
+.nav-links { flex-wrap: wrap; gap: 10px 18px; }
+.language-control { display: flex; align-items: center; gap: 8px; color: var(--muted); font-size: 12px; }
+.language-control select { max-width: 170px; padding: 6px 8px; border: 1px solid var(--border); border-radius: 6px; background: var(--surface); color: var(--text); font: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+[hidden] { display: none !important; }
+.feedback-page { padding-top: 48px; }
+.feedback-page h1 { font-size: clamp(30px, 4.5vw, 42px); line-height: 1.14; }
+.feedback-page .lead { margin-top: 16px; font-size: 17px; }
+.feedback-page .support-form { margin-top: 28px; gap: 12px; }
+.field-note { margin: -3px 0 4px; color: var(--muted); font-size: 12px; }
+.disclosure { border-top: 1px solid var(--border); padding: 16px 0; }
+.disclosure summary { cursor: pointer; font-size: 14px; font-weight: 650; color: var(--muted); }
+.disclosure[open] summary { margin-bottom: 18px; color: var(--text); }
+.additional-fields { display: grid; gap: 10px; }
+.support-form .consent { font-size: 12px; line-height: 1.6; font-weight: 400; }
+.support-form .consent span { color: var(--muted); }
+.feedback-footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; margin-top: 22px; font-size: 13px; }
+.donate-page { padding-top: 64px; min-height: calc(100vh - 175px); }
+.donate-page h1 { font-size: clamp(34px, 6vw, 48px); }
+.donation-primary { margin-top: 28px; }
+.donation-primary .payment-note { max-width: 540px; color: var(--muted); }
+.payment-note { margin: 14px 0 0; font-size: 12px !important; }
+.donation-primary .payment-provider { margin-top: 10px; }
+.donation-primary .payment-availability { margin-top: 4px; }
+.crypto-section { margin-top: 28px; padding: 18px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.crypto-section summary { cursor: pointer; color: var(--muted); font-size: 14px; width: fit-content; }
+.crypto-section summary:hover { color: var(--text); }
+.crypto-choice { display: grid; gap: 8px; margin-top: 20px; font-size: 12px; color: var(--muted); }
+.crypto-choice select { width: 100%; max-width: 320px; background: var(--surface); color: var(--text); border: 1px solid var(--border); border-radius: 6px; padding: 10px; font: inherit; font-size: 14px; }
+.crypto-grid { display: grid; gap: 16px; margin-top: 18px; }
+.crypto-card { min-width: 0; padding: 18px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface); }
+[hidden] { display: none !important; }
+.crypto-card h3 { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; font-size: 20px; }
+.network-badge { border: 1px solid var(--border); border-radius: 5px; padding: 2px 7px; color: #bf94ff; font-size: 12px; letter-spacing: 0; }
+.network-warning { margin: 8px 0 16px; color: var(--muted); font-size: 13px; }
+.qr-details { margin-bottom: 16px; }
+.crypto-qr { display: block; width: 180px; max-width: 100%; height: auto; margin: 16px 0 0; background: #fff; border-radius: 5px; }
+.address-label { margin-bottom: 6px; color: var(--muted); font-size: 12px; }
+.document .crypto-address { display: block; padding: 10px; font-size: 12px; line-height: 1.6; overflow-wrap: anywhere; user-select: all; }
+.copy-status { margin: 10px 0 0; color: var(--muted); font-size: 12px; overflow-wrap: anywhere; }
+.copy-status:empty { display: none; }
+.crypto-safety { margin-top: 16px; color: var(--muted); font-size: 12px; }
+.crypto-safety p { margin-bottom: 8px; }
+.crypto-safety p:last-child { margin-bottom: 0; }
+.other-help { margin-top: 32px; color: var(--muted); font-size: 14px; }
+.other-help a { display: inline-block; margin-right: 20px; }
+.preview-note { margin-top: 28px; color: var(--muted); font-size: 12px; }
+.community-note { margin-top: 14px; color: var(--muted); font-size: 14px; }
+.button-secondary { background: var(--surface-raised); border: 1px solid var(--border); }
+.button-secondary:hover { background: var(--surface); border-color: var(--accent); }
+@media (max-width: 480px) {
+  .feedback-page, .donate-page { padding: 34px 18px 46px; }
+  .feedback-page .support-form { padding: 18px; }
+}
 
 main { max-width: var(--max-width); margin: 0 auto; padding: 72px 24px 80px; }
 
@@ -100,6 +155,7 @@ h1 { max-width: 760px; margin: 0; font-size: clamp(38px, 7vw, 64px); letter-spac
 .page-title { font-size: clamp(34px, 6vw, 52px); }
 h2 { margin: 46px 0 14px; font-size: 25px; letter-spacing: -.02em; line-height: 1.2; }
 h3 { margin: 0 0 8px; font-size: 17px; line-height: 1.3; }
+h1, h2, h3 { overflow-wrap: anywhere; hyphens: auto; }
 p { margin: 0 0 16px; }
 .lead { max-width: 680px; margin-top: 22px; color: var(--muted); font-size: 19px; line-height: 1.55; }
 
